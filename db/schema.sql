@@ -1,1 +1,1 @@
-CREATE DATABASE burgers_db;
+CREATE DATABASE seqburgers_db;
