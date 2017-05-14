@@ -1,0 +1,19 @@
+{
+  "name": "sequlizeburger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arezootajer/sequlizeburger.git"
+  },
+  "author": "Arezoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arezootajer/sequlizeburger/issues"
+  },
+  "homepage": "https://github.com/Arezootajer/sequlizeburger#readme"
+}

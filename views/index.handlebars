@@ -1,0 +1,101 @@
+<div class="container ">
+	<div class="row">
+		<div class="col-md-12 text-center">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="text-center">
+					<h2>Burgers Ready</h2>
+				</div>
+				<div class="panel-body">
+					<table class="table">
+						<thead>
+						<tr>
+							<th>ID</th>
+							<th>Burger</th>
+							<th>Devour</th>
+						</tr>
+						</thead>
+						<tbody>
+						{{#each burgers}}
+							{{#unless this.devoured}}
+								<tr>
+									<td>{{this.id}}</td>
+									<td>{{this.burger_name}}</td>
+									<td>
+										<form class="form-inline" action="/api/{{this.id}}?_method=PUT" method="POST">
+											<input type="hidden" name="devoured" value="1">
+											<button class="btn btn-success" type="submit">Devour</button>
+										</form>
+									</td>
+								</tr>
+							{{/unless}}
+						{{/each}}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+
+			<div class="panel panel-default">
+				<div class="text-center">
+					<h2>Burgers Menu</h2>
+				</div>
+				<div class="panel-body">
+					<table class="table">
+						<thead>
+						<tr>
+							<th>ID</th>
+							<th>Burger</th>
+							<th>Order</th>
+						</tr>
+						</thead>
+						<tbody>
+						{{#each burgers}}
+							{{#if this.devoured}}
+								<tr>
+									<td>{{this.id}}</td>
+									<td>{{this.burger_name}}</td>
+									<td>
+										<form class="form-inline" action="/api/{{this.id}}?_method=PUT" method="POST">
+											<input type="hidden" name="devoured" value="0">
+											<button class="btn btn-warning" type="submit">Order</button>
+										</form>
+									</td>
+								</tr>
+							{{/if}}
+						{{/each}}
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="col-md-12 text-center">
+					<h2>Create Burger</h2>
+					<form class="create-update-form form-inline" action="/api/new" method="POST">
+
+						<div class="form-group">
+							<label for="burg">Burger Name:</label>
+							<input type="text" id="burg" name="burger_name">
+						</div>
+
+						<button class="btn btn-default" type="submit">Create Burger</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
