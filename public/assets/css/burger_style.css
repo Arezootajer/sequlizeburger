@@ -1,0 +1,7 @@
+body {
+  background-image: url('../img/burger.png');
+}
+
+.panel {
+  background: rgba(200, 54, 54, 0.5);
+}
